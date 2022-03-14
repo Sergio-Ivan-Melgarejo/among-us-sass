@@ -1,0 +1,25 @@
+@import "./general";
+@import "./character";
+
+.body{
+    background:var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.character-container-1{
+    @include characters(#c81713,#7e100e);
+}
+
+.character-container-2{
+    @include characters(#13c822,#2e7e0e);
+}
+
+.character-container-3{
+    @include characters(#c8bc13,#7c7e0e);
+}
+.character-container-4{
+    @include characters(#133dc8,#0e197e);
+}

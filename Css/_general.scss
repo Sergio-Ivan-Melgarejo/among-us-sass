@@ -1,0 +1,9 @@
+:root{
+    --bg-color:radial-gradient(#1a1a30,#0d0d19);
+}
+
+*,*::after,*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
