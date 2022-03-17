@@ -1,0 +1,37 @@
+@keyframes leg-left {
+    0%{
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(40deg) translate(-40%,-15%);
+    }
+    75%{
+        transform: rotate(-40deg) translate(30%,-0%);
+    }
+    100%{
+        transform: rotate(0deg);
+
+    }
+}
+@keyframes leg-right {
+    0%{
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(-50deg) translate(30%,10%);
+        height: 7em;
+    }
+    75%{
+        transform: rotate(50deg) translate(-10%,10%);
+        height: 7em;
+    }
+    100%{
+        transform: rotate(0deg);
+
+    }
+}
+
+.movement{
+    .leg-right{animation: leg-left 3s infinite linear;}
+    .leg-left{animation: leg-right 3s infinite linear;}
+}

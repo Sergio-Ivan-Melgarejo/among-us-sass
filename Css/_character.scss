@@ -2,6 +2,7 @@
     border: 1px solid red;
     padding: 1em 1em 5em 3em;
     position: relative;
+    z-index: 100;
 
     .character {
         background-color: $shadow;
@@ -87,7 +88,7 @@
         transform: translate(80%,0%);
     }
 
-    .legs {
+    .legs{
         position: absolute;
         bottom: 1em;
         background-color: $shadow;
@@ -101,11 +102,11 @@
         z-index: 10;
     }
 
-    .leg-right {
+    .leg-left {
         left: 3em;
     }
 
-    .leg-left {
+    .leg-right {
         height: 4.5em;
         right: 1em;
         bottom: 1.5em;

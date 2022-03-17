@@ -1,8 +1,13 @@
 @import "./general";
+@import "./animation";
 @import "./character";
+@import "./home";
+@import "./select";
+@import "./ingame";
+@import "./gameOver";
 
-.body{
-    background:var(--bg-color);
+.game{
+    border: 1px solid red;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,6 +25,7 @@
 .character-container-3{
     @include characters(#c8bc13,#7c7e0e);
 }
+
 .character-container-4{
     @include characters(#133dc8,#0e197e);
 }
