@@ -1,23 +1,39 @@
-.selecting{
+.select{
     background-color: blue !important;
 
-    .select{
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        box-shadow: 0 0 30vw inset #000;
+    .header{
+        .h1{
+            display: block;
+            visibility: visible;
+            span{
+                opacity: 1;
+            }
+        }
     }
-    
-    .character-container{
-        border-radius: 50%;
-        transition: box-shadow 1s;
-    }
-    .character-container:hover{
-        box-shadow: 0 0 0 2em #ffffff01,0 0 0 4em #ffffff02,0 0 0 6em #ffffff03,0 0 0 8em #ffffff04;
-        cursor: pointer;
-        z-index: 200;
 
+    .game{
+
+        .character-container{
+            border-radius: 50%;
+            transition-delay: 0s;
+            opacity: .5;
+
+            .character-modal{
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: #00000000;
+                z-index: 100;
+                border: 50%;
+            }
+        }
+        .character-container:hover{
+            box-shadow: 0 0 0 2em #ffffff01,0 0 0 4em #ffffff02,0 0 0 6em #ffffff03,0 0 0 8em #ffffff04;
+            cursor: pointer;
+            z-index: 200;
+            opacity: 1;
+        }
     }
 }

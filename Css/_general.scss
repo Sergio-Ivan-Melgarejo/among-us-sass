@@ -11,8 +11,10 @@
 .body{
     background:#242424;
     background:var(--bg-color);
-    min-height: 100vh;
+    height: 100vh;
+    min-height: 1000px;
     font-size: 14px;
+    overflow: hidden;
 }
 
 .header{
@@ -30,20 +32,54 @@
 
     transition: all 1s ;
     .h1{
-        transition:all 1s;
+        display: none;
+        visibility: hidden;
+        span{
+            opacity: 0;
+        }
+    }
+
+    .score{
+        visibility: hidden;
+        opacity: 0;
+        display: none;
+    }
+
+    .play{
+        visibility: hidden;
+        opacity: 0;
+        display: none;
     }
 }
+
+.character-container{
+    font-size: 6px;
+    transition: all 1s ease;
+}
+
+.character-container-2{transition-delay: .3s;}
+.character-container-3{transition-delay: .6s;}
+.character-container-4{transition-delay: .9s;}
 
 
 @media screen and (min-width:566px){
     .body{font-size: 16px;}
+    .character-container{font-size: 10px;}
 }
 @media screen and (min-width:966px){
     .body{font-size: 18px;}
+    .header{
+        width: 50%;
+        left: 50%;
+        transform: translate(-50%);
+    }
+    .character-container{font-size: 15px;}
 }
 @media screen and (min-width:1200px){
     .body{font-size: 20px;}
+    .character-container{font-size: 20px;}
 }
 @media screen and (min-width:1440px){
     .body{font-size: 22px;}
+    .character-container{font-size: 25px;}
 }

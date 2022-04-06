@@ -12,8 +12,10 @@
 .body {
   background: #242424;
   background: var(--bg-color);
-  min-height: 100vh;
+  height: 100vh;
+  min-height: 1000px;
   font-size: 14px;
+  overflow: hidden;
 }
 
 .header {
@@ -37,13 +39,53 @@
 }
 
 .header .h1 {
-  -webkit-transition: all 1s;
-  transition: all 1s;
+  display: none;
+  visibility: hidden;
+}
+
+.header .h1 span {
+  opacity: 0;
+}
+
+.header .score {
+  visibility: hidden;
+  opacity: 0;
+  display: none;
+}
+
+.header .play {
+  visibility: hidden;
+  opacity: 0;
+  display: none;
+}
+
+.character-container {
+  font-size: 6px;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.character-container-2 {
+  -webkit-transition-delay: .3s;
+          transition-delay: .3s;
+}
+
+.character-container-3 {
+  -webkit-transition-delay: .6s;
+          transition-delay: .6s;
+}
+
+.character-container-4 {
+  -webkit-transition-delay: .9s;
+          transition-delay: .9s;
 }
 
 @media screen and (min-width: 566px) {
   .body {
     font-size: 16px;
+  }
+  .character-container {
+    font-size: 10px;
   }
 }
 
@@ -51,10 +93,22 @@
   .body {
     font-size: 18px;
   }
+  .header {
+    width: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%);
+            transform: translate(-50%);
+  }
+  .character-container {
+    font-size: 15px;
+  }
 }
 
 @media screen and (min-width: 1200px) {
   .body {
+    font-size: 20px;
+  }
+  .character-container {
     font-size: 20px;
   }
 }
@@ -62,6 +116,9 @@
 @media screen and (min-width: 1440px) {
   .body {
     font-size: 22px;
+  }
+  .character-container {
+    font-size: 25px;
   }
 }
 
@@ -167,6 +224,7 @@
 
 .home .header .h1 {
   font-size: 3em;
+  display: block;
 }
 
 .home .header .h1 .center, .home .header .h1 .left, .home .header .h1 .right {
@@ -219,6 +277,7 @@
 }
 
 .home .header .play {
+  display: block;
   border: .1em solid #fff;
   background-color: transparent;
   color: #fff;
@@ -226,8 +285,6 @@
   font-size: 2em;
   border-radius: 5px;
   cursor: pointer;
-  visibility: hidden;
-  opacity: 0;
   -webkit-transform: translate(0, 5em);
           transform: translate(0, 5em);
   -webkit-transition: background-color .5s ease, color .5s ease;
@@ -248,43 +305,50 @@
   display: none;
 }
 
-.selecting {
+.home .character-container {
+  -webkit-transform: translate(0, 100%);
+          transform: translate(0, 100%);
+  opacity: 0;
+  visibility: 0;
+}
+
+.select {
   background-color: blue !important;
 }
 
-.selecting .select {
+.select .header .h1 {
+  display: block;
+  visibility: visible;
+}
+
+.select .header .h1 span {
+  opacity: 1;
+}
+
+.select .game .character-container {
+  border-radius: 50%;
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  opacity: .5;
+}
+
+.select .game .character-container .character-modal {
   position: absolute;
+  left: 0;
+  top: 0;
   width: 100%;
   height: 100%;
-  top: 0;
-  left: 0;
-  -webkit-box-shadow: 0 0 30vw inset #000;
-          box-shadow: 0 0 30vw inset #000;
+  background-color: #00000000;
+  z-index: 100;
+  border: 50%;
 }
 
-.selecting .character-container {
-  border-radius: 50%;
-  -webkit-transition: -webkit-box-shadow 1s;
-  transition: -webkit-box-shadow 1s;
-  transition: box-shadow 1s;
-  transition: box-shadow 1s, -webkit-box-shadow 1s;
-}
-
-.selecting .character-container:hover {
+.select .game .character-container:hover {
   -webkit-box-shadow: 0 0 0 2em #ffffff01,0 0 0 4em #ffffff02,0 0 0 6em #ffffff03,0 0 0 8em #ffffff04;
           box-shadow: 0 0 0 2em #ffffff01,0 0 0 4em #ffffff02,0 0 0 6em #ffffff03,0 0 0 8em #ffffff04;
   cursor: pointer;
   z-index: 200;
-}
-
-/* __ Header _________________ */
-.inGame .header .h1 {
-  font-size: 3em;
-}
-
-.inGame .header .score {
-  font-size: 5em;
-  border: 1px solid red;
+  opacity: 1;
 }
 
 .game {
